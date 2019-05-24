@@ -1,0 +1,121 @@
+\usepackage{ctex}
+\usepackage{setspace}
+% \usepackage[english]{babel}
+\usepackage[backend=biber,style=nature]{biblatex}
+
+
+
+\setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{STSong}
+\renewcommand*{\songti}{\CJKfamily{zhsong}}
+\setCJKfamilyfont{zhkai}[AutoFakeBold = {2.17}]{STKaiti}
+\renewcommand*{\kaishu}{\CJKfamily{zhkai}}
+\setCJKfamilyfont{zhhei}[AutoFakeBold = {2.17}]{STHeiti}
+\renewcommand*{\heiti}{\CJKfamily{zhhei}}
+
+\setbeamerfont{title}{family=\zihao{3}\bfseries}
+\setbeamerfont{frametitle}{family=\zihao{-3}\bfseries}
+\setbeamerfont{block title}{family=\heiti}
+\setbeamerfont{author}{family=\zihao{5}\kaishu}
+\setbeamerfont{institute}{family=\zihao{5}\kaishu}
+\setbeamerfont{id}{family=\zihao{5}\kaishu}
+\setbeamerfont{date}{family=\zihao{5}\kaishu}
+\setbeamerfont{caption}{family=\zihao{-5}\kaishu}
+\setbeamerfont{footnote}{family=\zihao{-6}\kaishu}
+\setbeamerfont{section in toc}{family=\zihao{5}\heiti}
+\setbeamerfont{subsection in toc}{family=\zihao{-5}\songti}
+\setbeamerfont{section number projected}{family=\usebeamerfont{section in toc}}
+\setbeamerfont{subsection number projected}{family=\usebeamerfont{subsection in toc}}
+
+\definecolor{njuPurple}{RGB}{110,15,109}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block body}{bg=normal text.bg!90!black}
+\setbeamercolor{block title}{bg=njuPurple, fg=white}
+\setbeamercolor{frametitle}{fg=njuPurple}
+\setbeamercolor{title}{bg=njuPurple, fg=white}
+\setbeamercolor{structure}{fg=njuPurple}
+\setbeamercolor{footnote}{fg=black, bg=black}
+\setbeamercolor{section number projected}{bg=njuPurple,fg=white}
+\setbeamercolor{subsection number projected}{bg=njuPurple,fg=white}
+
+
+\setbeamertemplate{footline}[page number]{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{block title}[rounded]
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{title page}
+{
+	\vfill
+	\vskip-10pt\hskip-10pt
+	\includegraphics[width=0.25\paperwidth]{logo/NJU_LogoAndName.jpg}\\
+	\vskip40pt
+	\hfill
+  	\begin{beamercolorbox}[rounded=true,wd=0.75\paperwidth,shadow=true]{title}
+   		 \centering\begin{spacing}{1.1}\usebeamerfont{title}\inserttitle\end{spacing}
+	\end{beamercolorbox}
+	\hfill\hfill
+	\vskip25pt
+	\hfill\usebeamerfont{author}姓名: \insertauthor\quad\quad\usebeamerfont{id}学号: \insertid\hfill\hfill
+	\vskip10pt
+	\hfill\usebeamerfont{institute}院系: \insertinstitute\hfill\hfill
+	\vskip10pt
+	\hfill\usebeamerfont{date}答辩日期: \insertdate\hfill\hfill
+	\vfill
+}
+\setbeamertemplate{frametitle}
+{
+    \vskip10pt\hskip-10pt
+    \includegraphics[height=25pt]{logo/NJU_Logo.jpg}
+    \vskip-28pt\hskip20pt
+    \usebeamerfont{title}\usebeamercolor{title}\insertframetitle
+    \vskip-10pt\noindent\hskip15pt\rule{0.8\paperwidth}{1pt}
+    \vskip-5pt
+}
+\setbeamertemplate{headline}{}
+
+
+\newcommand{\id}[1]{\newcommand{\insertid}{#1}}
+\renewcommand*{\cite}[1]{\footnote[frame]{\fullcite{#1}}}
+\newcommand*{\makecontents}
+{
+	\begin{spacing}{1.5}
+	\hfill
+	\parbox[t]{.95\textwidth}
+	{
+		\begin{minipage}[c][0.75\textheight]{\textwidth}
+			\tableofcontents
+		\end{minipage}
+	}
+	\end{spacing}
+}
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{目录}
+		\begin{spacing}{1.5}
+			\hfill
+			\parbox[t]{.95\textwidth}
+			{
+				\begin{minipage}[c][0.1\textheight]{\textwidth}
+					\tableofcontents[currentsection]
+				\end{minipage}
+			}
+		\end{spacing}
+	\end{frame}
+}
+\AtBeginSubsection[]
+{
+	\begin{frame}
+		\frametitle{目录}
+		\begin{spacing}{1.5}
+			\hfill
+			\parbox[t]{.95\textwidth}
+			{
+				\begin{minipage}[c][0.75\textheight]{\textwidth}
+					\tableofcontents[currentsection,currentsubsection]
+				\end{minipage}
+			}
+		\end{spacing}
+	\end{frame}
+}
