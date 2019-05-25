@@ -8,5 +8,9 @@
 *.synctex.gz
 *.toc
 *.xdv
+*.bcf
+*.nav
+*.xml
+*.snm
 .DS_Store
 logo/.DS_Store
