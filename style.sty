@@ -18,6 +18,7 @@
 \setbeamerfont{author}{family=\zihao{5}\kaishu}
 \setbeamerfont{institute}{family=\zihao{5}\kaishu}
 \setbeamerfont{id}{family=\zihao{5}\kaishu}
+\setbeamerfont{supervisor}{family=\zihao{5}\kaishu}
 \setbeamerfont{date}{family=\zihao{5}\kaishu}
 \setbeamerfont{caption}{family=\zihao{-5}\kaishu}
 \setbeamerfont{footnote}{family=\zihao{-6}\kaishu}
@@ -58,7 +59,7 @@
 	\vskip25pt
 	\hfill\usebeamerfont{author}姓名: \insertauthor\quad\quad\usebeamerfont{id}学号: \insertid\hfill\hfill
 	\vskip10pt
-	\hfill\usebeamerfont{institute}院系: \insertinstitute\hfill\hfill
+	\hfill\usebeamerfont{institute}院系: \insertinstitute\quad\quad\usebeamerfont{supervisor}指导老师: \insertsupervisor\hfill\hfill
 	\vskip10pt
 	\hfill\usebeamerfont{date}答辩日期: \insertdate\hfill\hfill
 	\vfill
@@ -76,6 +77,7 @@
 
 
 \newcommand{\id}[1]{\newcommand{\insertid}{#1}}
+\newcommand{\supervisor}[1]{\newcommand{\insertsupervisor}{#1}}
 \renewcommand*{\cite}[1]{\footnote[frame]{\fullcite{#1}}}
 \newcommand*{\makecontents}
 {
