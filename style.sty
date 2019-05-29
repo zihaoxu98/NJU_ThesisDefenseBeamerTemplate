@@ -1,8 +1,8 @@
 \usepackage{ctex}
 \usepackage{setspace}
-% \usepackage[english]{babel}
 \usepackage[backend=biber,style=nature]{biblatex}
-
+\renewcommand*{\cite}[1]{\footnote[frame]{\fullcite{#1}}}
+% \usepackage[english]{babel}
 
 
 \setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{STSong}
@@ -26,6 +26,7 @@
 \setbeamerfont{subsection in toc}{family=\zihao{-5}\songti}
 \setbeamerfont{section number projected}{family=\usebeamerfont{section in toc}}
 \setbeamerfont{subsection number projected}{family=\usebeamerfont{subsection in toc}}
+\setbeamerfont{alerted text}{family=\heiti}
 
 \definecolor{njuPurple}{RGB}{110,15,109}
 \setbeamercolor{background canvas}{bg=white}
@@ -37,6 +38,7 @@
 \setbeamercolor{footnote}{fg=black, bg=black}
 \setbeamercolor{section number projected}{bg=njuPurple,fg=white}
 \setbeamercolor{subsection number projected}{bg=njuPurple,fg=white}
+\setbeamercolor{alerted text}{fg=red}
 
 
 \setbeamertemplate{footline}[page number]{}
@@ -66,19 +68,20 @@
 }
 \setbeamertemplate{frametitle}
 {
+	\begin{spacing}{1.0}
     \vskip10pt\hskip-10pt
     \includegraphics[height=25pt]{logo/NJU_Logo.jpg}
     \vskip-28pt\hskip20pt
     \usebeamerfont{title}\usebeamercolor{title}\insertframetitle
     \vskip-10pt\noindent\hskip15pt\rule{0.8\paperwidth}{1pt}
     \vskip-5pt
+    \end{spacing}
 }
 \setbeamertemplate{headline}{}
 
 
 \newcommand{\id}[1]{\newcommand{\insertid}{#1}}
 \newcommand{\supervisor}[1]{\newcommand{\insertsupervisor}{#1}}
-\renewcommand*{\cite}[1]{\footnote[frame]{\fullcite{#1}}}
 \newcommand*{\makecontents}
 {
 	\begin{spacing}{1.5}
